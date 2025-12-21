@@ -37,4 +37,5 @@ library:
   source-dirs: src
   dependencies:
   - megaparsec
+  - Unique
 
