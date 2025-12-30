@@ -3,6 +3,7 @@ module Text.Megaparsec.DIMACS.Graph(module Text.Megaparsec.DIMACS.Graph.Types, g
 import Control.Monad
 import Data.List(sort)
 import Data.List.Unique
+import GHC.Conc
 import Text.Megaparsec
 import Text.Megaparsec.Char
 import Text.Megaparsec.DIMACS.Graph.Types
@@ -10,7 +11,8 @@ import Text.Megaparsec.DIMACS.Graph.Types
 grInt :: GrParser Int
 grInt = do
     int <- some digitChar
-    return (read int :: Int)
+    let readInt = read int :: Int
+    return (par readInt readInt)
 
 grProbLine :: GrParser ProbLine
 grProbLine = do
