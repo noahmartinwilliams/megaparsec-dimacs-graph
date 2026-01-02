@@ -25,6 +25,8 @@ source-repository head
 
 library
   exposed-modules:
+      Text.Megaparsec.DIMACS.Coords
+      Text.Megaparsec.DIMACS.Coords.Types
       Text.Megaparsec.DIMACS.Graph
       Text.Megaparsec.DIMACS.Graph.Types
   other-modules:
